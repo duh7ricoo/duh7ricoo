@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas DUH7' RICOO - Acesso Profissional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Incorporado para Estilo, Dinamismo e Profissionalismo */
+
+        :root {
+            /* Cores Profissionais/Futuristas */
+            --cor-fundo-overlay: rgba(10, 10, 20, 0.98); /* Azul Escuro Quase Preto */
+            --cor-texto-principal: #F0F8FF; /* Azul Ártico Suave */
+            --cor-titulo-base: #FFFFFF;
+            --cor-vermelho-claro: #FF5555; /* Neon Vermelho */
+            --cor-secundaria-neon: #00FFFF; /* Ciano/Azul Secundário */
+            --cor-input-borda: #444466;
+            --cor-input-foco: #50BFFF;
+            --cor-vermelho-escuro: #CC0000;
+            /* Nova cor para o botão do Instagram */
+            --cor-instagram: #E1306C; /* Magenta/Roxo Instagram */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            color: var(--cor-texto-principal); /* Cor de texto padrão */
+        }
+
+        /* Removido "height: 100%" e "overflow: hidden" para permitir a rolagem vertical */
+        body, html {
+            background-color: #0A0A14;
+        }
+
+        /* --- Fundo Dinâmico e Futurista com Imagem de Carro --- */
+        .fundo-dinamico {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            /* NOTA: Usando uma imagem alternativa e estável. SE VOCÊ TIVER O SEU ARQUIVO LOCALMENTE, MANTENHA-O. */
+            background: url('https://picsum.photos/1920/1080?random=1') no-repeat center center/cover;
+            filter: blur(8px) brightness(0.6); 
+            transition: filter 1s ease-in-out;
+            animation: panBackground 90s linear infinite alternate; 
+        }
+
+        @keyframes panBackground {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        /* OVERLAY */
+        .overlay-gradiente {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(5, 5, 15, 0.9) 70%, rgba(0, 255, 255, 0.05) 100%);
+            animation: pulseOverlay 15s infinite alternate;
+        }
+
+        @keyframes pulseOverlay {
+            from { opacity: 1; }
+            to { opacity: 0.95; }
+        }
+
+        /* --- Estrutura Central e Card --- */
+        .container-central {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            padding-top: 50px; 
+            padding-bottom: 50px; 
+        }
+
+        .card-login {
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            background-color: var(--cor-fundo-overlay);
+            border-radius: 20px;
+            box-shadow: 0 0 80px rgba(0, 0, 0, 0.7), 0 0 30px var(--cor-vermelho-claro); 
+            border: 2px solid var(--cor-input-foco);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            animation: float 5s ease-in-out infinite alternate; 
+            position: relative;
+            overflow: hidden; /* Fundamental para a transição de páginas */
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-8px); }
+        }
+
+        /* Título */
+        h1.titulo-app {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--cor-titulo-base);
+            text-align: center;
+            font-size: 2.5em; 
+            margin-bottom: 30px;
+            text-shadow: 0 0 5px rgba(255, 85, 85, 0.8), 0 0 15px rgba(255, 85, 85, 0.6);
+            animation: pulseRGB 8s infinite alternate ease-in-out;
+        }
+        
+        @keyframes pulseRGB {
+            0% { text-shadow: 0 0 5px var(--cor-vermelho-claro), 0 0 15px var(--cor-vermelho-claro); }
+            33% { text-shadow: 0 0 5px var(--cor-secundaria-neon), 0 0 15px var(--cor-secundaria-neon); }
+            66% { text-shadow: 0 0 5px #FF00FF, 0 0 15px #FF00FF; }
+            100% { text-shadow: 0 0 5px var(--cor-vermelho-claro), 0 0 15px var(--cor-vermelho-claro); }
+        }
+
+        .titulo-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        
+        /* Estilo do Ícone com a imagem enviada */
+        .titulo-wrapper .icone-instagram {
+            width: 100px; 
+            height: 100px; 
+            margin-right: 5px; 
+            /* A URL da imagem original (909000012.png) é usada aqui */
+            /* >>>>>>>>>>>>>>> ALTERAÇÃO FEITA AQUI <<<<<<<<<<<<<<< */
+            background: url('1309000162.png') no-repeat center center/contain;
+            filter: drop-shadow(0 0 10px var(--cor-secundaria-neon));
+            border-radius: 0; 
+            background-color: transparent; 
+            animation: rotateIcon 10s linear infinite;
+        }
+
+        @keyframes rotateIcon {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Campos de Input e Erros */
+        .input-group {
+            margin-bottom: 30px; 
+            position: relative;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 18px; 
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--cor-input-borda);
+            border-radius: 10px;
+            color: var(--cor-texto-principal);
+            font-size: 1.1em;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .input-group input:focus {
+            border-color: var(--cor-input-foco);
+            box-shadow: 0 0 15px rgba(80, 191, 255, 0.8), inset 0 0 5px rgba(0, 0, 0, 0.8);
+        }
+        .mensagem-erro {
+            color: var(--cor-vermelho-claro);
+            font-size: 0.85em;
+            margin-top: 5px;
+            height: 20px;
+            opacity: 0;
+            position: absolute;
+        }
+        .input-group.erro .mensagem-erro { opacity: 1; }
+
+        /* Botão COMUM e Link do Instagram estilizado como Botão */
+        .btn-proximo, .btn-instagram-link {
+            width: 100%;
+            padding: 18px;
+            margin-top: 40px;
+            background-color: var(--cor-vermelho-escuro);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+            box-shadow: 0 0 20px rgba(204, 0, 0, 0.6);
+            /* Propriedades para garantir que o <a> se pareça com o <button> */
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Estilo para o novo botão do Instagram */
+        .btn-instagram-link {
+            margin-top: 30px;
+            background-color: var(--cor-instagram) !important; 
+            box-shadow: 0 0 20px rgba(225, 48, 108, 0.6) !important; /* Sombra Neon Magenta/Roxo */
+            animation: pulseInstagram 1.5s infinite alternate !important; /* Nova animação */
+        }
+        
+        /* Animação de pulso para o botão do Instagram */
+        @keyframes pulseInstagram {
+            from { box-shadow: 0 0 15px rgba(225, 48, 108, 0.5); }
+            to { box-shadow: 0 0 25px rgba(255, 100, 150, 0.8); }
+        }
+
+        .btn-instagram-link:hover { 
+            background-color: #C13584 !important; /* Tom mais escuro ao passar o mouse */
+            box-shadow: 0 0 30px rgba(225, 48, 108, 0.8) !important; 
+        }
+
+        @keyframes buttonPulse {
+            from { box-shadow: 0 0 15px rgba(204, 0, 0, 0.5); }
+            to { box-shadow: 0 0 25px rgba(255, 85, 85, 0.8); }
+        }
+        .btn-proximo:hover { background-color: #E60000; box-shadow: 0 0 30px rgba(204, 0, 0, 0.8); }
+
+        /* --- Transição de Conteúdo (Páginas) --- */
+        #form-acesso, #pagina-itens {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        #form-acesso.hidden {
+            opacity: 0;
+            transform: translateX(-100%);
+            position: absolute;
+            width: calc(100% - 80px); 
+        }
+        
+        #pagina-itens.hidden {
+            display: none;
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        
+        #pagina-itens.visible {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* --- ESTILO DA PÁGINA DE ITENS --- */
+        .pagina-itens {
+            padding-top: 10px;
+            text-align: left;
+        }
+
+        .pagina-itens h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--cor-secundaria-neon);
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+        
+        .pagina-itens h3 {
+             font-size: 1.4em;
+             color: var(--cor-vermelho-claro);
+             text-shadow: 0 0 5px rgba(255, 85, 85, 0.7);
+             margin-top: 25px;
+             border-bottom: 1px solid rgba(255, 85, 85, 0.2);
+             padding-bottom: 5px;
+        }
+
+        .aviso-importante {
+            padding: 15px;
+            background-color: rgba(255, 85, 85, 0.1);
+            border-left: 5px solid var(--cor-vermelho-claro);
+            border-radius: 5px;
+            margin: 20px 0;
+            font-size: 0.9em;
+        }
+        
+        .aviso-importante p { margin-top: 5px; }
+        .aviso-importante strong { font-weight: 700; }
+
+        .item-card {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid var(--cor-input-borda);
+        }
+        
+        .item-card h4 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: var(--cor-input-foco);
+            font-weight: 700;
+        }
+        
+        .item-card .preco {
+            display: block;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--cor-vermelho-claro);
+            margin-top: 5px;
+        }
+        
+        .item-card .caracteristicas {
+            font-size: 0.9em;
+            color: #AAAAAA;
+            margin-top: 5px;
+        }
+        
+        .observacao-final {
+            margin-top: 30px;
+            padding: 10px;
+            font-size: 0.9em;
+            background-color: rgba(80, 191, 255, 0.1);
+            border-left: 4px solid var(--cor-input-foco);
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="fundo-dinamico"></div>
+    <div class="overlay-gradiente"></div>
+
+    <div class="container-central">
+        <div class="card-login">
+            <div class="titulo-wrapper">
+                <div class="icone-instagram"></div>
+                <h1 class="titulo-app">
+                    <span style="font-style: italic; font-weight: bold;">VENDAS DUH7 RICOO</span>
+                </h1>
+            </div>
+
+            <form id="form-acesso">
+                
+                <div class="input-group" id="group-nick">
+                    <label for="nick">NICK:</label>
+                    <input type="text" id="nick" name="nick" maxlength="12" placeholder="Seu Nick (Máx. 12 caracteres)">
+                    <span class="mensagem-erro" id="erro-nick"></span>
+                </div>
+
+                <div class="input-group" id="group-id">
+                    <label for="id">ID:</label>
+                    <input type="text" id="id" name="id" placeholder="Seu ID (Somente números)">
+                    <span class="mensagem-erro" id="erro-id"></span>
+                </div>
+
+                <div class="input-group" id="group-token">
+                    <label for="token">ACCESS TOKEN:</label>
+                    <input type="text" id="token" name="token" placeholder="Chave de Acesso Exclusiva">
+                    <span class="mensagem-erro" id="erro-token"></span>
+                </div>
+
+                <button type="submit" class="btn-proximo">ACESSAR PAINEL</button>
+            </form>
+
+            <div id="pagina-itens" class="pagina-itens hidden">
+                
+                <h2>ACESSO LIBERADO!</h2>
+
+                <div class="aviso-importante">
+                    📸 **@DUH7RICOO**
+                    <p style="margin-top: 10px;">
+                        🚨 **AVISO IMPORTANTE** 🚨<br>
+                        Todos os itens são adicionados **diretamente na sua conta** através de um **BOT 100% seguro**, sem risco de banimento.
+                    </p>
+                    <p style="margin-top: 10px;">
+                        ❌ Não pedimos senha, login secundário ou dados sensíveis.<br>
+                        ✅ O processo utiliza apenas o **Access Token**.<br>
+                        🔑 O passo a passo para obter o token é ensinado **somente aos clientes que realizarem a compra**.
+                    </p>
+                </div>
+
+                <h3>📦 ITENS DISPONÍVEIS</h3>
+                
+                <div class="item-card">
+                    <h4>🔹 LIKES FREE FIRE</h4>
+                    <span class="preco">➡️ A partir de R$ 2,00</span>
+                    <p class="caracteristicas">
+                        ✔️ Pagamento único, sem mensalidades.<br>
+                        ✔️ Enviados em pacotes de 100 por dia até completar a quantidade adquirida.
+                    </p>
+                </div>
+                
+                <div class="item-card">
+                    <h4>🔹 BIO GRANDE (EXPANDIDA)</h4>
+                    <span class="preco">➡️ A partir de R$ 2,00</span>
+                    <p class="caracteristicas">
+                        ✔️ Permite adicionar textos longos ou formatados na sua Bio do perfil.
+                    </p>
+                </div>
+                
+                <div class="item-card">
+                    <h4>🔹 ITENS ESPECIAIS NO PERFIL</h4>
+                    <span class="preco">➡️ R$ 4,00</span>
+                    <p class="caracteristicas">
+                        ⚠️ **Nem todos os itens podem ser adicionados.**<br>
+                        👉 **Importante:** Confira os exemplos na minha conta antes de escolher, pois **cada alteração será cobrada novamente**.
+                    </p>
+                </div>
+
+                <div class="observacao-final">
+                    <p>
+                        📌 **Observação:** Não sou o criador do bot, apenas adquiri o meu e agora revendo.
+                        <br>🚫 Não compare meu preço com outros, cada vendedor tem seus custos.
+                    </p>
+                </div>
+                
+                <a href="https://www.instagram.com/duh7ricoo?igsh=dWI0dXM5MWkweTB5" 
+                   target="_blank" 
+                   class="btn-proximo btn-instagram-link">
+                    CHAMAR NO INSTAGRAM
+                </a>
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        // JavaScript para Validação e Interação Dinâmica
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('form-acesso');
+            const paginaItens = document.getElementById('pagina-itens');
+            const nickInput = document.getElementById('nick');
+            const idInput = document.getElementById('id');
+            const tokenInput = document.getElementById('token');
+
+            // --- Funções de Validação ---
+
+            const setError = (grupoId, mensagem) => {
+                const grupo = document.getElementById(grupoId);
+                const erro = document.getElementById('erro-' + grupoId.split('-')[1]);
+                erro.textContent = mensagem;
+                grupo.classList.add('erro');
+                return false;
+            };
+
+            const clearError = (grupoId) => {
+                const grupo = document.getElementById(grupoId);
+                const erro = document.getElementById('erro-' + grupoId.split('-')[1]);
+                grupo.classList.remove('erro');
+                erro.textContent = "";
+                return true;
+            };
+
+            const validarNick = (input) => {
+                const valor = input.value.trim();
+                if (valor.length === 0) return setError('group-nick', "O Nick é obrigatório.");
+                if (valor.length > 12) return setError('group-nick', `Nick deve ter no máximo 12 caracteres. Atualmente: ${valor.length}`);
+                return clearError('group-nick');
+            };
+
+            const validarId = (input) => {
+                const valor = input.value.trim();
+                input.value = valor.replace(/\D/g, ''); // Remove caracteres não numéricos em tempo real
+                if (valor.length === 0) return setError('group-id', "O ID é obrigatório.");
+                if (!/^\d+$/.test(valor)) return setError('group-id', "O ID deve conter apenas números.");
+                return clearError('group-id');
+            };
+
+            const validarToken = (input) => {
+                const valor = input.value.trim();
+                const regexToken = /^[a-fA-F0-9]{32,64}$/; 
+                
+                if (valor.length === 0) return setError('group-token', "O Access Token é obrigatório.");
+                if (!regexToken.test(valor)) return setError('group-token', "Formato de Access Token inválido (Mínimo 32 caracteres hexadecimais).");
+                return clearError('group-token');
+            };
+
+            // Validações em tempo real
+            nickInput.addEventListener('input', () => validarNick(nickInput));
+            idInput.addEventListener('input', () => validarId(idInput));
+            tokenInput.addEventListener('input', () => validarToken(tokenInput));
+
+
+            // --- Lógica de Submissão e Transição de Páginas ---
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); 
+
+                // Força a revalidação de todos os campos
+                const isNickValid = validarNick(nickInput);
+                const isIdValid = validarId(idInput);
+                const isTokenValid = validarToken(tokenInput);
+
+                if (isNickValid && isIdValid && isTokenValid) {
+                    
+                    // Inicia o Fade-out do formulário
+                    form.classList.add('hidden');
+                    
+                    // Após 0.5s (tempo da transição CSS do fade-out)
+                    setTimeout(() => {
+                        form.style.display = 'none'; // Esconde o formulário completamente
+                        
+                        // Prepara a página de itens para o fade-in
+                        paginaItens.style.display = 'block'; 
+                        
+                        // Adiciona a classe 'visible' para iniciar o Fade-in/Slide
+                        paginaItens.classList.add('visible'); 
+
+                    }, 500); // Deve ser igual ou maior que a duração da transição CSS (.5s)
+
+                    console.log("Acesso concedido. Nick:", nickInput.value, "ID:", idInput.value);
+
+                }
+            });
+        });
+    </script>
+</body>
+</html>
